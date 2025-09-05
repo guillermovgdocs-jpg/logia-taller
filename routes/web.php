@@ -2,10 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Dashboard\CategoryController;
 
-Route::get('/', function () {
+/**Route::get('/', function () {
     return Inertia::render('Welcome');
-})->name('home');
+})->name('home');**/
+
+Route::resource('/', CategoryController::class);
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
@@ -13,3 +16,4 @@ Route::get('dashboard', function () {
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+ 
